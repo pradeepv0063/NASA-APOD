@@ -26,6 +26,7 @@
 		CCF641A22802D85400E4373C /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641A12802D85400E4373C /* TitleTableViewCell.swift */; };
 		CCF641A42802D85F00E4373C /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641A32802D85F00E4373C /* MediaTableViewCell.swift */; };
 		CCF641A62802D86600E4373C /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641A52802D86600E4373C /* DetailTableViewCell.swift */; };
+		CCF641D32803567200E4373C /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641D22803567200E4373C /* LocalStorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		CCF641A12802D85400E4373C /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		CCF641A32802D85F00E4373C /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		CCF641A52802D86600E4373C /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		CCF641D22803567200E4373C /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				CCF641982802B94E00E4373C /* APODService.swift */,
+				CCF641D22803567200E4373C /* LocalStorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				CCF641642802B06E00E4373C /* AppDelegate.swift in Sources */,
 				CCF641662802B06E00E4373C /* SceneDelegate.swift in Sources */,
 				CCF641972802B87B00E4373C /* MainViewModel.swift in Sources */,
+				CCF641D32803567200E4373C /* LocalStorageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

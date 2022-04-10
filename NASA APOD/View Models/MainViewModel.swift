@@ -24,6 +24,7 @@ class MainViewModel: MainViewModelType {
     var mediaType: MediaType = .unknown
     
     let service: APODServiceType.Type
+    var storageService: LocalStorageServiceType.Type = LocalStorageService.self
 
     init(service: APODServiceType.Type = APODService.self) {
         self.service = service
@@ -39,39 +40,44 @@ class MainViewModel: MainViewModelType {
     }
     
     func toggleFavorite() -> Bool {
+        
+        var favoritesList = storageService.favorites
         var isSelected: Bool
-        if var favorites = UserDefaults.standard.object(forKey: UserDefaultKeys.favorites.rawValue) as? [String: String] {
+        
+        if favoritesList.isEmpty {
             
-            if favorites[title] == nil {
+            isSelected = true
+            storageService.favorites = [title: date]
+        } else {
+            
+            if favoritesList[title] == nil {
                 isSelected = true
-                favorites[title] = date
+                favoritesList[title] = date
             } else {
                 isSelected = false
-                favorites[title] = nil
+                favoritesList[title] = nil
             }
-            UserDefaults.standard.set(favorites, forKey: UserDefaultKeys.favorites.rawValue)
-        } else {
-            isSelected = true
-            let favorites = [title: date]
-            UserDefaults.standard.set(favorites, forKey: UserDefaultKeys.favorites.rawValue)
+            storageService.favorites = favoritesList
         }
-        
+
         return isSelected
     }
     
     func getFavStatus() -> Bool {
-        let favorites = UserDefaults.standard.object(forKey: UserDefaultKeys.favorites.rawValue) as? [String: String]
-        return favorites?[title] != nil
+        let status = storageService.favorites[title] != nil
+        return status
     }
     
     func getFavList() -> [String] {
-        guard let favorites = UserDefaults.standard.object(forKey: UserDefaultKeys.favorites.rawValue) as? [String: String] else { return [] }
-        let keys = favorites.map { $0.key }
+        let keys = storageService.favorites.map { $0.key }
         return keys
     }
     
     func loadFav(title: String) {
-        guard let favorites = UserDefaults.standard.object(forKey: UserDefaultKeys.favorites.rawValue) as? [String: String], let date = favorites[title] else { return }
+        let favorites = storageService.favorites
+        guard let date = favorites[title] else {
+            return
+        }
         getPicture(for: date)
     }
 }

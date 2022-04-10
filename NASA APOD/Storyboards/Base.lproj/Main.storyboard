@@ -108,22 +108,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iW-fR-n5N" customClass="YTPlayerView">
-                                                    <rect key="frame" x="5" y="5" width="404" height="490"/>
+                                                    <rect key="frame" x="15" y="5" width="384" height="490"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="BYk-Vh-FfW">
-                                                    <rect key="frame" x="5" y="5" width="404" height="490"/>
+                                                    <rect key="frame" x="15" y="5" width="384" height="490"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="2iW-fR-n5N" secondAttribute="bottom" constant="5" id="HRc-nl-goB"/>
-                                                <constraint firstItem="2iW-fR-n5N" firstAttribute="top" secondItem="1wM-cQ-B5Z" secondAttribute="top" constant="5" id="KAN-5q-CMC"/>
-                                                <constraint firstAttribute="trailing" secondItem="BYk-Vh-FfW" secondAttribute="trailing" constant="5" id="QK7-zJ-UOO"/>
-                                                <constraint firstItem="2iW-fR-n5N" firstAttribute="leading" secondItem="1wM-cQ-B5Z" secondAttribute="leading" constant="5" id="S4K-jZ-37X"/>
-                                                <constraint firstItem="BYk-Vh-FfW" firstAttribute="leading" secondItem="1wM-cQ-B5Z" secondAttribute="leading" constant="5" id="Txe-yN-hoA"/>
-                                                <constraint firstItem="BYk-Vh-FfW" firstAttribute="top" secondItem="1wM-cQ-B5Z" secondAttribute="top" constant="5" id="V6O-p6-a3k"/>
-                                                <constraint firstAttribute="bottom" secondItem="BYk-Vh-FfW" secondAttribute="bottom" constant="5" id="agG-4k-X6t"/>
-                                                <constraint firstAttribute="trailing" secondItem="2iW-fR-n5N" secondAttribute="trailing" constant="5" id="l6B-LW-3gU"/>
+                                                <constraint firstAttribute="bottom" secondItem="BYk-Vh-FfW" secondAttribute="bottom" constant="5" id="00N-pm-SXe"/>
+                                                <constraint firstAttribute="trailing" secondItem="BYk-Vh-FfW" secondAttribute="trailing" constant="15" id="3ic-2w-g5d"/>
+                                                <constraint firstItem="2iW-fR-n5N" firstAttribute="leading" secondItem="1wM-cQ-B5Z" secondAttribute="leading" constant="15" id="O06-eo-9FA"/>
+                                                <constraint firstItem="BYk-Vh-FfW" firstAttribute="top" secondItem="1wM-cQ-B5Z" secondAttribute="top" constant="5" id="bSK-jC-pM6"/>
+                                                <constraint firstItem="2iW-fR-n5N" firstAttribute="top" secondItem="1wM-cQ-B5Z" secondAttribute="top" constant="5" id="fCp-vl-Cf1"/>
+                                                <constraint firstItem="BYk-Vh-FfW" firstAttribute="leading" secondItem="1wM-cQ-B5Z" secondAttribute="leading" constant="15" id="szl-5a-4MQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="2iW-fR-n5N" secondAttribute="trailing" constant="15" id="uJQ-1M-0cq"/>
+                                                <constraint firstAttribute="bottom" secondItem="2iW-fR-n5N" secondAttribute="bottom" constant="5" id="vUe-NA-yq8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -132,24 +132,24 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" id="lhp-DR-k5L" customClass="DetailTableViewCell" customModule="NASA_APOD" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="588" width="414" height="31"/>
+                                        <rect key="frame" x="0.0" y="588" width="414" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lhp-DR-k5L" id="hR4-39-fte">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLE-Qg-4mT">
-                                                    <rect key="frame" x="5" y="10" width="404" height="21"/>
+                                                    <rect key="frame" x="15" y="10" width="384" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="gLE-Qg-4mT" secondAttribute="bottom" id="RZH-ec-rH8"/>
-                                                <constraint firstItem="gLE-Qg-4mT" firstAttribute="leading" secondItem="hR4-39-fte" secondAttribute="leading" constant="5" id="hVB-D9-eJz"/>
-                                                <constraint firstAttribute="trailing" secondItem="gLE-Qg-4mT" secondAttribute="trailing" constant="5" id="jlz-QO-XDw"/>
-                                                <constraint firstItem="gLE-Qg-4mT" firstAttribute="top" secondItem="hR4-39-fte" secondAttribute="top" constant="10" id="rD2-5S-df8"/>
+                                                <constraint firstItem="gLE-Qg-4mT" firstAttribute="top" secondItem="hR4-39-fte" secondAttribute="top" constant="10" id="1eW-aF-re3"/>
+                                                <constraint firstAttribute="bottom" secondItem="gLE-Qg-4mT" secondAttribute="bottom" constant="30" id="5OD-XX-ema"/>
+                                                <constraint firstItem="gLE-Qg-4mT" firstAttribute="leading" secondItem="hR4-39-fte" secondAttribute="leading" constant="15" id="b0V-cC-s3W"/>
+                                                <constraint firstAttribute="trailing" secondItem="gLE-Qg-4mT" secondAttribute="trailing" constant="15" id="iU0-GG-ANR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

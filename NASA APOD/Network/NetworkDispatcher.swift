@@ -37,7 +37,11 @@ class BaseNetworkDispatcher: NetworkDispatcher {
                 let response = try JSONDecoder().decode(type, from: $0.data)
                 seal.fulfill(response)
             }.catch { error in
-                seal.reject(error)
+                guard let promiseError = error as? PMKHTTPError else {
+                    seal.reject(error)
+                    return
+                }
+                seal.reject(promiseError.createError)
             }
         }
     }
@@ -68,5 +72,23 @@ private extension BaseNetworkDispatcher {
         }
 
         return urlRequest
+    }
+}
+
+extension PMKHTTPError {
+
+    
+    public var createError: NSError {
+        switch self {
+            case .badStatusCode(let code, let data, _):
+                var errorMsg = ""
+                do {
+                    let error = try JSONDecoder().decode(ErrorModel.self, from: data)
+                    errorMsg = error.message
+                } catch {
+                    errorMsg = error.localizedDescription
+                }
+                return NSError(domain: "", code: code, userInfo: [NSLocalizedDescriptionKey: errorMsg])
+        }
     }
 }

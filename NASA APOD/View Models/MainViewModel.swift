@@ -80,7 +80,7 @@ extension MainViewModel {
     func loadFav(title: String) {
         let favorites = storageService.favorites
         guard let date = favorites[title] else {
-            showErrorAlert()
+            showErrorAlert("Please try after sometime")
             return
         }
         getPicture(for: date)
@@ -97,7 +97,7 @@ private extension MainViewModel {
             self?.reload.value = true
         }.catch { error in
             print("Error: \(error.localizedDescription)")
-            self.showErrorAlert()
+            self.showErrorAlert(error.localizedDescription)
         }.finally {
             self.showLoader.value = (false, "")
         }
@@ -120,7 +120,7 @@ private extension MainViewModel {
         }
     }
     
-    func showErrorAlert() {
-        showAlert.value = ("Error", "Please try after sometime")
+    func showErrorAlert(_ message: String) {
+        showAlert.value = ("Error", message)
     }
 }

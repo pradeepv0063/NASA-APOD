@@ -28,6 +28,7 @@
 		CCF641A62802D86600E4373C /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641A52802D86600E4373C /* DetailTableViewCell.swift */; };
 		CCF641D32803567200E4373C /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641D22803567200E4373C /* LocalStorageService.swift */; };
 		CCF641D528035CB900E4373C /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641D428035CB900E4373C /* NetworkConnection.swift */; };
+		CCF641D7280362D600E4373C /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641D6280362D600E4373C /* ErrorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		CCF641A52802D86600E4373C /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		CCF641D22803567200E4373C /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		CCF641D428035CB900E4373C /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
+		CCF641D6280362D600E4373C /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				CCF6419A2802BA8100E4373C /* APODModel.swift */,
+				CCF641D6280362D600E4373C /* ErrorModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				CCF6417D2802B24B00E4373C /* NetworkContants.swift in Sources */,
 				CCF6418A2802B26E00E4373C /* Extensions.swift in Sources */,
 				CCF641A42802D85F00E4373C /* MediaTableViewCell.swift in Sources */,
+				CCF641D7280362D600E4373C /* ErrorModel.swift in Sources */,
 				CCF641682802B06E00E4373C /* ViewController.swift in Sources */,
 				CCF6417F2802B24B00E4373C /* NetworkModels.swift in Sources */,
 				CCF641992802B94E00E4373C /* APODService.swift in Sources */,

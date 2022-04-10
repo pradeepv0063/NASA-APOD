@@ -15,6 +15,7 @@ class MainViewModel: MainViewModelType {
     
     var reload: Dynamic<Bool> = Dynamic(false)
     var showLoader: Dynamic<(Bool, String)> = Dynamic((false, ""))
+    var showAlert: Dynamic<(String, String)> = Dynamic(("", ""))
 
     var title: String = ""
     var detail: String = ""
@@ -38,6 +39,9 @@ class MainViewModel: MainViewModelType {
         let dateString =  date.getDateString()
         getPicture(for: dateString)
     }
+}
+
+extension MainViewModel {
     
     func toggleFavorite() -> Bool {
         
@@ -76,6 +80,7 @@ class MainViewModel: MainViewModelType {
     func loadFav(title: String) {
         let favorites = storageService.favorites
         guard let date = favorites[title] else {
+            showErrorAlert()
             return
         }
         getPicture(for: date)
@@ -92,6 +97,7 @@ private extension MainViewModel {
             self?.reload.value = true
         }.catch { error in
             print("Error: \(error.localizedDescription)")
+            self.showErrorAlert()
         }.finally {
             self.showLoader.value = (false, "")
         }
@@ -112,5 +118,9 @@ private extension MainViewModel {
                 imageUrl = nil
             default: break
         }
+    }
+    
+    func showErrorAlert() {
+        showAlert.value = ("Error", "Please try after sometime")
     }
 }

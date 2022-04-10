@@ -136,6 +136,12 @@ private extension ViewController {
                 MBProgressHUD .hide(for: self.view, animated: true)
             }
         }
+        
+        viewModel.showAlert.bind { [weak self] (title, message) in
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+            self?.present(alert, animated: true)
+        }
     }
     
     @objc func favoriteTapped() {

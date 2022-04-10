@@ -17,7 +17,7 @@ typealias APODModelList = [APODModel]
 
 struct APODModel: Codable {
 
-    let date: Date?
+    let date: String
     let detail: String
     let hdurl: URL?
     let mediaType: MediaType
@@ -37,11 +37,10 @@ struct APODModel: Codable {
         detail = try container.decodeIfPresent(String.self, forKey: .detail) ?? ""
         mediaType = try container.decodeIfPresent(MediaType.self, forKey: .mediaType) ?? .unknown
         title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
+        date = try container.decodeIfPresent(String.self, forKey: .date) ?? ""
         let hdurlString = try container.decodeIfPresent(String.self, forKey: .hdurl) ?? ""
         hdurl = URL(string: hdurlString)
         urlString = try container.decodeIfPresent(String.self, forKey: .url) ?? ""
         url = URL(string: urlString)
-        let dateString = try container.decodeIfPresent(String.self, forKey: .date)
-        date = dateString?.getDate()
     }
 }

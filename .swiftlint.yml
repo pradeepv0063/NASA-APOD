@@ -1,0 +1,16 @@
+disabled_rules:
+  - identifier_name
+  - line_length
+  - todo
+  - comment_spacing
+  - computed_accessors_order
+  - large_tuple
+
+excluded:
+  - Pods
+
+force_cast:
+    severity: warning
+
+empty_count:
+    severity: warning

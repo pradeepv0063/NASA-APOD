@@ -21,6 +21,12 @@
 		CCF641892802B26E00E4373C /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641862802B26E00E4373C /* Dynamic.swift */; };
 		CCF6418A2802B26E00E4373C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641872802B26E00E4373C /* Extensions.swift */; };
 		CCF6418B2802B26E00E4373C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641882802B26E00E4373C /* Constants.swift */; };
+		CCF641972802B87B00E4373C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641962802B87B00E4373C /* MainViewModel.swift */; };
+		CCF641992802B94E00E4373C /* APODService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641982802B94E00E4373C /* APODService.swift */; };
+		CCF6419B2802BA8100E4373C /* APODModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6419A2802BA8100E4373C /* APODModel.swift */; };
+		CCF641A22802D85400E4373C /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641A12802D85400E4373C /* TitleTableViewCell.swift */; };
+		CCF641A42802D85F00E4373C /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641A32802D85F00E4373C /* MediaTableViewCell.swift */; };
+		CCF641A62802D86600E4373C /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641A52802D86600E4373C /* DetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		CCF641862802B26E00E4373C /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		CCF641872802B26E00E4373C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CCF641882802B26E00E4373C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CCF641962802B87B00E4373C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		CCF641982802B94E00E4373C /* APODService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODService.swift; sourceTree = "<group>"; };
+		CCF6419A2802BA8100E4373C /* APODModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODModel.swift; sourceTree = "<group>"; };
+		CCF641A12802D85400E4373C /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		CCF641A32802D85F00E4373C /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
+		CCF641A52802D86600E4373C /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +97,7 @@
 		CCF641622802B06E00E4373C /* NASA APOD */ = {
 			isa = PBXGroup;
 			children = (
+				CCF641A02802D83300E4373C /* Views */,
 				CCF6418F2802B29A00E4373C /* View Controllers */,
 				CCF641932802B34200E4373C /* View Models */,
 				CCF641942802B34900E4373C /* Services */,
@@ -165,6 +178,7 @@
 		CCF641932802B34200E4373C /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				CCF641962802B87B00E4373C /* MainViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -172,6 +186,7 @@
 		CCF641942802B34900E4373C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CCF641982802B94E00E4373C /* APODService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -179,8 +194,19 @@
 		CCF641952802B35000E4373C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CCF6419A2802BA8100E4373C /* APODModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CCF641A02802D83300E4373C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCF641A12802D85400E4373C /* TitleTableViewCell.swift */,
+				CCF641A32802D85F00E4373C /* MediaTableViewCell.swift */,
+				CCF641A52802D86600E4373C /* DetailTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FE359F9761B5CB74038AEF2C /* Pods */ = {
@@ -307,16 +333,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF641A22802D85400E4373C /* TitleTableViewCell.swift in Sources */,
+				CCF6419B2802BA8100E4373C /* APODModel.swift in Sources */,
 				CCF6417D2802B24B00E4373C /* NetworkContants.swift in Sources */,
 				CCF6418A2802B26E00E4373C /* Extensions.swift in Sources */,
+				CCF641A42802D85F00E4373C /* MediaTableViewCell.swift in Sources */,
 				CCF6416E2802B06E00E4373C /* NASA_APOD.xcdatamodeld in Sources */,
 				CCF641682802B06E00E4373C /* ViewController.swift in Sources */,
 				CCF6417F2802B24B00E4373C /* NetworkModels.swift in Sources */,
+				CCF641992802B94E00E4373C /* APODService.swift in Sources */,
 				CCF6418B2802B26E00E4373C /* Constants.swift in Sources */,
+				CCF641A62802D86600E4373C /* DetailTableViewCell.swift in Sources */,
 				CCF6417E2802B24B00E4373C /* NetworkDispatcher.swift in Sources */,
 				CCF641892802B26E00E4373C /* Dynamic.swift in Sources */,
 				CCF641642802B06E00E4373C /* AppDelegate.swift in Sources */,
 				CCF641662802B06E00E4373C /* SceneDelegate.swift in Sources */,
+				CCF641972802B87B00E4373C /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

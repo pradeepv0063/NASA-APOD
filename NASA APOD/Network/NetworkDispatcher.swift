@@ -31,6 +31,9 @@ class BaseNetworkDispatcher: NetworkDispatcher {
             firstly {
                 session.dataTask(.promise, with: urlRequest).validate()
             }.compactMap {
+                if let responseString = String(data: $0.data, encoding: .utf8) {
+                    print("RESPONSE \n \(responseString)")
+                }
                 let response = try JSONDecoder().decode(type, from: $0.data)
                 seal.fulfill(response)
             }.catch { error in

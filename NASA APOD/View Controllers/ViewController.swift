@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 import MBProgressHUD
+import youtube_ios_player_helper
 
 enum CellRows: Int {
     case title = 0, media, detail
@@ -51,6 +52,8 @@ extension ViewController: UITableViewDataSource {
             case CellRows.media.rawValue:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.mediaCell.rawValue, for: indexPath) as? MediaTableViewCell else { return UITableViewCell() }
                 if viewModel.mediaType == .image {
+                    cell.videoView.isHidden = true
+                    cell.imgView.isHidden = false
                     cell.imgView.kf.setImage(with: viewModel.imageUrl) { result in
                         switch result {
                         case .success(let value):
@@ -61,7 +64,9 @@ extension ViewController: UITableViewDataSource {
                         }
                     }
                 } else if viewModel.mediaType == .video {
-                    
+                    cell.imgView.isHidden = true
+                    cell.videoView.isHidden = false
+                    cell.videoView.load(withVideoId: viewModel.videoId!)
                 }
                 return cell
                 

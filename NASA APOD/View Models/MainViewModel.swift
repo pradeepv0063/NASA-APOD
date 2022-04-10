@@ -19,7 +19,7 @@ class MainViewModel: MainViewModelType {
     var title: String = ""
     var detail: String = ""
     var imageUrl: URL?
-    var videoUrl: URL?
+    var videoId: String?
     var mediaType: MediaType = .unknown
     
     let service: APODServiceType.Type
@@ -61,9 +61,9 @@ private extension MainViewModel {
         switch model.mediaType {
             case .image:
                 imageUrl = model.url
-                videoUrl = nil
+                videoId = nil
             case .video:
-                videoUrl = model.url
+                videoId = model.urlString.components(separatedBy: "/").last
                 imageUrl = nil
             default: break
         }

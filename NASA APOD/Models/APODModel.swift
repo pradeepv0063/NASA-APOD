@@ -23,6 +23,7 @@ struct APODModel: Codable {
     let mediaType: MediaType
     let title: String
     let url: URL?
+    let urlString: String
     
     enum CodingKeys: String, CodingKey {
         case title, date, url, hdurl
@@ -38,7 +39,7 @@ struct APODModel: Codable {
         title = try container.decodeIfPresent(String.self, forKey: .title) ?? ""
         let hdurlString = try container.decodeIfPresent(String.self, forKey: .hdurl) ?? ""
         hdurl = URL(string: hdurlString)
-        let urlString = try container.decodeIfPresent(String.self, forKey: .url) ?? ""
+        urlString = try container.decodeIfPresent(String.self, forKey: .url) ?? ""
         url = URL(string: urlString)
         let dateString = try container.decodeIfPresent(String.self, forKey: .date)
         date = dateString?.getDate()

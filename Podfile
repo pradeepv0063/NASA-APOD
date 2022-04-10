@@ -10,5 +10,6 @@ target 'NASA APOD' do
   pod 'PromiseKit', "~> 6.8"
   pod 'Kingfisher', '~> 7.0'
   pod 'MBProgressHUD', '~> 1.2.0'
+  pod "youtube-ios-player-helper"
 
 end

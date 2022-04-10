@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import youtube_ios_player_helper
 
 class MediaTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var videoView: YTPlayerView!
     @IBOutlet weak var imgView: UIImageView!
 
     override func awakeFromNib() {

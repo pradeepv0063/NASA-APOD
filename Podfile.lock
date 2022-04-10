@@ -11,12 +11,14 @@ PODS:
   - PromiseKit/UIKit (6.16.3):
     - PromiseKit/CorePromise
   - SwiftLint (0.46.3)
+  - youtube-ios-player-helper (1.0.4)
 
 DEPENDENCIES:
   - Kingfisher (~> 7.0)
   - MBProgressHUD (~> 1.2.0)
   - PromiseKit (~> 6.8)
   - SwiftLint
+  - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
@@ -24,13 +26,15 @@ SPEC REPOS:
     - MBProgressHUD
     - PromiseKit
     - SwiftLint
+    - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   PromiseKit: ed0e2a8e3f3cd59d5d98ca0a6de481a2c5c59c0b
   SwiftLint: ae76d82f056734f853c8cd0371503252c606c482
+  youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: 2c255d45f4d1981b2bbc53b6299e174b2cdc39cc
+PODFILE CHECKSUM: 179d05b93ae9da5fe11c2c637106b955c229cf0c
 
 COCOAPODS: 1.11.2

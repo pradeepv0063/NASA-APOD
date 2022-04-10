@@ -49,7 +49,7 @@ private extension BaseNetworkDispatcher {
 
         let urlString = network.domain + request.path
         guard let url = URL(string: urlString) else { throw NetworkError.invalidURL }
-        var urlRequest: URLRequest = URLRequest(url: url)
+        var urlRequest: URLRequest = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
 
         if request.httpMethod != .get, let body = request.body, let data = body.toData {
             urlRequest.httpBody = data

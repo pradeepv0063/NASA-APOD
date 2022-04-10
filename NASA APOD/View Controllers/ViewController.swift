@@ -32,6 +32,21 @@ class ViewController: UIViewController {
         presentedViewController?.dismiss(animated: true, completion: nil)
         viewModel.loadPicture(on: datePicker.date)
     }
+
+    @IBAction func favoritesTapped(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Your Favorites", message: "", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "One", style: .default, handler: { _ in
+            print("Hello")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Two", style: .default, handler: { _ in
+            print("Hello")
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+        present(alert, animated: false)
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -47,6 +62,9 @@ extension ViewController: UITableViewDataSource {
             case CellRows.title.rawValue:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.titleCell.rawValue, for: indexPath) as? TitleTableViewCell else { return UITableViewCell() }
                 cell.imageTitle.text = viewModel.title
+                cell.favorite.addTarget(self, action: #selector(favoriteTapped), for: .touchUpInside)
+                let imageName = viewModel.getFavStatus()
+                cell.favorite.imageView?.image = UIImage(named: imageName)
                 return cell
                 
             case CellRows.media.rawValue:
@@ -112,5 +130,14 @@ private extension ViewController {
                 MBProgressHUD .hide(for: self.view, animated: true)
             }
         }
+    }
+    
+    @objc func favoriteTapped() {
+        
+        let imageName = viewModel.toggleFavorite()
+        let titleIndexPath = IndexPath(row: 0, section: 0)
+        let cell = tableView.cellForRow(at: titleIndexPath) as? TitleTableViewCell
+        cell?.favorite.imageView?.image = UIImage(named: imageName)
+        tableView.reloadRows(at: [titleIndexPath], with: .automatic)
     }
 }

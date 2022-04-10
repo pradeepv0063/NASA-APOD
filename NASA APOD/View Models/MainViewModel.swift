@@ -18,6 +18,7 @@ class MainViewModel: MainViewModelType {
 
     var title: String = ""
     var detail: String = ""
+    var date: String = ""
     var imageUrl: URL?
     var videoId: String?
     var mediaType: MediaType = .unknown
@@ -35,6 +36,37 @@ class MainViewModel: MainViewModelType {
     func loadPicture(on date: Date) {
         let dateString =  date.getDateString()
         getPicture(for: dateString)
+    }
+    
+    func toggleFavorite() -> String {
+        var isSelected: Bool
+        if var favorites = UserDefaults.standard.object(forKey: UserDefaultKeys.favorites.rawValue) as? [String: String] {
+            
+            if favorites[title] == nil {
+                isSelected = true
+                favorites[title] = date
+            } else {
+                isSelected = false
+                favorites[title] = nil
+            }
+            UserDefaults.standard.set(favorites, forKey: UserDefaultKeys.favorites.rawValue)
+        } else {
+            isSelected = true
+            let favorites = [title: date]
+            UserDefaults.standard.set(favorites, forKey: UserDefaultKeys.favorites.rawValue)
+        }
+        
+        let imageName = isSelected ? "FavoriteFill" : "Favorite"
+        return imageName
+    }
+    
+    func getFavStatus() -> String {
+        let favorites = UserDefaults.standard.object(forKey: UserDefaultKeys.favorites.rawValue) as? [String: String]
+        if favorites?[title] != nil {
+            return "FavoriteFill"
+        } else {
+            return "Favorite"
+        }
     }
 }
 
@@ -58,6 +90,7 @@ private extension MainViewModel {
         title = model.title
         detail = model.detail
         mediaType = model.mediaType
+        date = model.date
         switch model.mediaType {
             case .image:
                 imageUrl = model.url

@@ -12,3 +12,7 @@ enum CellIdentifiers: String {
     case mediaCell
     case detailCell
 }
+
+enum UserDefaultKeys: String {
+    case favorites
+}

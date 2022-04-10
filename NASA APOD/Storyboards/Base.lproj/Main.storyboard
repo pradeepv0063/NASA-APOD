@@ -29,7 +29,7 @@
             <objects>
                 <viewController id="oSc-3b-0yx" customClass="ViewController" customModule="NASA_APOD" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ygM-wt-6aL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSD-pv-LXC" userLabel="Button View">
@@ -60,10 +60,10 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EbN-2C-XsC">
-                                <rect key="frame" x="0.0" y="148" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="titleCell" id="zNe-B2-rys" customClass="TitleTableViewCell" customModule="NASA_APOD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="titleCell" id="zNe-B2-rys" customClass="TitleTableViewCell" customModule="NASA_APOD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zNe-B2-rys" id="A0M-fP-UaQ">
@@ -76,16 +76,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnb-cU-Tz1">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnb-cU-Tz1">
                                                     <rect key="frame" x="369" y="2" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="FCA-10-Izb"/>
                                                         <constraint firstAttribute="width" secondItem="Dnb-cU-Tz1" secondAttribute="height" multiplier="1:1" id="P8y-07-0hZ"/>
                                                     </constraints>
-                                                    <buttonConfiguration key="configuration" style="plain"/>
-                                                    <connections>
-                                                        <action selector="favoriteTapped:" destination="zNe-B2-rys" eventType="touchUpInside" id="m20-Dy-2AC"/>
-                                                    </connections>
+                                                    <buttonConfiguration key="configuration" style="plain" image="Favorite"/>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -101,7 +98,7 @@
                                             <outlet property="imageTitle" destination="OGE-Wz-lih" id="ilX-Sk-345"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mediaCell" rowHeight="500" id="obL-Hw-SF8" customClass="MediaTableViewCell" customModule="NASA_APOD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mediaCell" rowHeight="500" id="obL-Hw-SF8" customClass="MediaTableViewCell" customModule="NASA_APOD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="88" width="414" height="500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="obL-Hw-SF8" id="1wM-cQ-B5Z">
@@ -132,7 +129,7 @@
                                             <outlet property="videoView" destination="2iW-fR-n5N" id="J7Q-1V-bhW"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" id="lhp-DR-k5L" customClass="DetailTableViewCell" customModule="NASA_APOD" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" id="lhp-DR-k5L" customClass="DetailTableViewCell" customModule="NASA_APOD" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="588" width="414" height="31"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lhp-DR-k5L" id="hR4-39-fte">
@@ -177,9 +174,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bQ1-9H-EXd">
-                        <barButtonItem key="rightBarButtonItem" title="View Favorites" id="cTc-RM-L7o"/>
+                        <barButtonItem key="rightBarButtonItem" title="View Favorites" id="cTc-RM-L7o">
+                            <connections>
+                                <action selector="favoritesTapped:" destination="oSc-3b-0yx" id="N3s-gc-ZiC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="datePicker" destination="veT-V0-ybq" id="AGP-kj-a18"/>
                         <outlet property="tableView" destination="EbN-2C-XsC" id="uIL-Dx-tln"/>
@@ -191,6 +191,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Favorite" width="33.333332061767578" height="33.333332061767578"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

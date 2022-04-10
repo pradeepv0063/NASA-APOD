@@ -12,7 +12,6 @@
 		CCF641662802B06E00E4373C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641652802B06E00E4373C /* SceneDelegate.swift */; };
 		CCF641682802B06E00E4373C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641672802B06E00E4373C /* ViewController.swift */; };
 		CCF6416B2802B06E00E4373C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF641692802B06E00E4373C /* Main.storyboard */; };
-		CCF6416E2802B06E00E4373C /* NASA_APOD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CCF6416C2802B06E00E4373C /* NASA_APOD.xcdatamodeld */; };
 		CCF641702802B06F00E4373C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCF6416F2802B06F00E4373C /* Assets.xcassets */; };
 		CCF641732802B06F00E4373C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF641712802B06F00E4373C /* LaunchScreen.storyboard */; };
 		CCF6417D2802B24B00E4373C /* NetworkContants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF6417A2802B24B00E4373C /* NetworkContants.swift */; };
@@ -38,7 +37,6 @@
 		CCF641652802B06E00E4373C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CCF641672802B06E00E4373C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CCF6416A2802B06E00E4373C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CCF6416D2802B06E00E4373C /* NASA_APOD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NASA_APOD.xcdatamodel; sourceTree = "<group>"; };
 		CCF6416F2802B06F00E4373C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCF641722802B06F00E4373C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCF641742802B06F00E4373C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				CCF641942802B34900E4373C /* Services */,
 				CCF641952802B35000E4373C /* Models */,
 				CCF641922802B2D300E4373C /* Storyboards */,
-				CCF641902802B2B200E4373C /* Core Data */,
 				CCF6418E2802B28E00E4373C /* Helpers */,
 				CCF6418C2802B27200E4373C /* Network */,
 				CCF6418D2802B27900E4373C /* Application */,
@@ -147,14 +144,6 @@
 				CCF641672802B06E00E4373C /* ViewController.swift */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		CCF641902802B2B200E4373C /* Core Data */ = {
-			isa = PBXGroup;
-			children = (
-				CCF6416C2802B06E00E4373C /* NASA_APOD.xcdatamodeld */,
-			);
-			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		CCF641912802B2C200E4373C /* Supporting Files */ = {
@@ -338,7 +327,6 @@
 				CCF6417D2802B24B00E4373C /* NetworkContants.swift in Sources */,
 				CCF6418A2802B26E00E4373C /* Extensions.swift in Sources */,
 				CCF641A42802D85F00E4373C /* MediaTableViewCell.swift in Sources */,
-				CCF6416E2802B06E00E4373C /* NASA_APOD.xcdatamodeld in Sources */,
 				CCF641682802B06E00E4373C /* ViewController.swift in Sources */,
 				CCF6417F2802B24B00E4373C /* NetworkModels.swift in Sources */,
 				CCF641992802B94E00E4373C /* APODService.swift in Sources */,
@@ -570,19 +558,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		CCF6416C2802B06E00E4373C /* NASA_APOD.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				CCF6416D2802B06E00E4373C /* NASA_APOD.xcdatamodel */,
-			);
-			currentVersion = CCF6416D2802B06E00E4373C /* NASA_APOD.xcdatamodel */;
-			path = NASA_APOD.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = CCF641582802B06E00E4373C /* Project object */;
 }

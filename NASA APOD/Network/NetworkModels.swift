@@ -13,7 +13,7 @@ protocol Network {
 }
 
 struct BaseNetwork: Network {
-    var domain: String = ""
+    var domain: String = "https://api.nasa.gov/planetary/apod?api_key=" + APIDetails.apiKey.rawValue
     var timeout: TimeInterval = 30
     var headers: [String: String] = ["Content-Type": "application/json"]
 }

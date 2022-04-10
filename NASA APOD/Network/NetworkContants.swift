@@ -19,3 +19,7 @@ enum HTTPMethod: String {
     case post = "POST"
     case put = "PUT"
 }
+
+enum APIDetails: String {
+    case apiKey = "2gRO8gaQIdeWYw6VaLcYn99mR3Hc3HawL49TGEfb"
+}

@@ -16,3 +16,8 @@ enum CellIdentifiers: String {
 enum UserDefaultKeys: String {
     case favorites
 }
+
+enum ImageNames: String {
+    case favorite = "Favorite"
+    case favoriteFill = "FavoriteFill"
+}

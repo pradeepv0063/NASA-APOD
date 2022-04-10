@@ -78,10 +78,12 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnb-cU-Tz1">
                                                     <rect key="frame" x="369" y="2" width="40" height="40"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="FCA-10-Izb"/>
                                                         <constraint firstAttribute="width" secondItem="Dnb-cU-Tz1" secondAttribute="height" multiplier="1:1" id="P8y-07-0hZ"/>
                                                     </constraints>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="Favorite"/>
                                                 </button>
                                             </subviews>

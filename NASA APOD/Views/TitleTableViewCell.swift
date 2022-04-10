@@ -14,6 +14,8 @@ class TitleTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        favorite.setImage(UIImage(named: ImageNames.favorite.rawValue), for: .normal)
+        favorite.setImage(UIImage(named: ImageNames.favoriteFill.rawValue), for: .selected)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

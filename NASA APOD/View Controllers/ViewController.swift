@@ -36,13 +36,19 @@ class ViewController: UIViewController {
     @IBAction func favoritesTapped(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Your Favorites", message: "", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "One", style: .default, handler: { _ in
-            print("Hello")
-        }))
+        let favList = viewModel.getFavList()
         
-        alert.addAction(UIAlertAction(title: "Two", style: .default, handler: { _ in
-            print("Hello")
-        }))
+        if favList.isEmpty {
+            alert.title = "No Favorites"
+        } else {
+            
+            alert.title = "Your Favorites"
+            for item in favList {
+                alert.addAction(UIAlertAction(title: item, style: .default, handler: { _ in
+                    self.viewModel.loadFav(title: item)
+                }))
+            }
+        }
         
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
         present(alert, animated: false)
@@ -63,8 +69,8 @@ extension ViewController: UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.titleCell.rawValue, for: indexPath) as? TitleTableViewCell else { return UITableViewCell() }
                 cell.imageTitle.text = viewModel.title
                 cell.favorite.addTarget(self, action: #selector(favoriteTapped), for: .touchUpInside)
-                let imageName = viewModel.getFavStatus()
-                cell.favorite.imageView?.image = UIImage(named: imageName)
+                let isSelected = viewModel.getFavStatus()
+                cell.favorite.isSelected = isSelected
                 return cell
                 
             case CellRows.media.rawValue:
@@ -134,10 +140,10 @@ private extension ViewController {
     
     @objc func favoriteTapped() {
         
-        let imageName = viewModel.toggleFavorite()
+        let isSelected = viewModel.toggleFavorite()
         let titleIndexPath = IndexPath(row: 0, section: 0)
         let cell = tableView.cellForRow(at: titleIndexPath) as? TitleTableViewCell
-        cell?.favorite.imageView?.image = UIImage(named: imageName)
+        cell?.favorite.isSelected = isSelected
         tableView.reloadRows(at: [titleIndexPath], with: .automatic)
     }
 }

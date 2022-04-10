@@ -38,7 +38,7 @@ class MainViewModel: MainViewModelType {
         getPicture(for: dateString)
     }
     
-    func toggleFavorite() -> String {
+    func toggleFavorite() -> Bool {
         var isSelected: Bool
         if var favorites = UserDefaults.standard.object(forKey: UserDefaultKeys.favorites.rawValue) as? [String: String] {
             
@@ -56,17 +56,23 @@ class MainViewModel: MainViewModelType {
             UserDefaults.standard.set(favorites, forKey: UserDefaultKeys.favorites.rawValue)
         }
         
-        let imageName = isSelected ? "FavoriteFill" : "Favorite"
-        return imageName
+        return isSelected
     }
     
-    func getFavStatus() -> String {
+    func getFavStatus() -> Bool {
         let favorites = UserDefaults.standard.object(forKey: UserDefaultKeys.favorites.rawValue) as? [String: String]
-        if favorites?[title] != nil {
-            return "FavoriteFill"
-        } else {
-            return "Favorite"
-        }
+        return favorites?[title] != nil
+    }
+    
+    func getFavList() -> [String] {
+        guard let favorites = UserDefaults.standard.object(forKey: UserDefaultKeys.favorites.rawValue) as? [String: String] else { return [] }
+        let keys = favorites.map { $0.key }
+        return keys
+    }
+    
+    func loadFav(title: String) {
+        guard let favorites = UserDefaults.standard.object(forKey: UserDefaultKeys.favorites.rawValue) as? [String: String], let date = favorites[title] else { return }
+        getPicture(for: date)
     }
 }
 

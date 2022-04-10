@@ -1,3 +1,28 @@
-PODFILE CHECKSUM: 943020ae63ea80b36ec38b7ac7030284c7697511
+PODS:
+  - PromiseKit (6.16.3):
+    - PromiseKit/CorePromise (= 6.16.3)
+    - PromiseKit/Foundation (= 6.16.3)
+    - PromiseKit/UIKit (= 6.16.3)
+  - PromiseKit/CorePromise (6.16.3)
+  - PromiseKit/Foundation (6.16.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.16.3):
+    - PromiseKit/CorePromise
+  - SwiftLint (0.46.3)
+
+DEPENDENCIES:
+  - PromiseKit
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - PromiseKit
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  PromiseKit: ed0e2a8e3f3cd59d5d98ca0a6de481a2c5c59c0b
+  SwiftLint: ae76d82f056734f853c8cd0371503252c606c482
+
+PODFILE CHECKSUM: e323b98f9df0f3109987edba671b3c5fdabf7c5b
 
 COCOAPODS: 1.11.2

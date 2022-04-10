@@ -106,6 +106,7 @@
 				CCF6415C2802B06E00E4373C /* Sources */,
 				CCF6415D2802B06E00E4373C /* Frameworks */,
 				CCF6415E2802B06E00E4373C /* Resources */,
+				AB749DBB238C2919CC1077D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +164,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AB749DBB238C2919CC1077D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NASA APOD/Pods-NASA APOD-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NASA APOD/Pods-NASA APOD-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NASA APOD/Pods-NASA APOD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CED1CB75368134C656D81493 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -6,5 +6,7 @@ target 'NASA APOD' do
   use_frameworks!
 
   # Pods for NASA APOD
+  pod 'SwiftLint'
+  pod 'PromiseKit'
 
 end

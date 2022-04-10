@@ -36,16 +36,6 @@ class MainViewModel: MainViewModelType {
         let dateString =  date.getDateString()
         getPicture(for: dateString)
     }
-    
-    func loadRandom() {
-        let randomDay = Int.random(in: 01...28)
-        let ranSt = "\(randomDay)"
-        var day = ranSt
-        if Array(ranSt).count == 1 {
-            day = "0\(ranSt)"
-        }
-        getPicture(for: "2022-03-\(day)")
-    }
 }
 
 private extension MainViewModel {

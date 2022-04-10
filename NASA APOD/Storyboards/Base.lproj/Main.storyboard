@@ -35,24 +35,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSD-pv-LXC" userLabel="Button View">
                                 <rect key="frame" x="0.0" y="88" width="414" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a00-0O-hzq">
-                                        <rect key="frame" x="173.5" y="14.5" width="67" height="31"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                        <buttonConfiguration key="configuration" style="plain" title="Button">
-                                            <color key="baseForegroundColor" systemColor="labelColor"/>
-                                        </buttonConfiguration>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="veT-V0-ybq">
+                                        <rect key="frame" x="152" y="14.5" width="110" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="L5P-KT-bsX"/>
+                                        </constraints>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5h-cr-iBp">
+                                        <rect key="frame" x="282" y="14.5" width="43" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Go"/>
                                         <connections>
-                                            <action selector="dateSelected:" destination="oSc-3b-0yx" eventType="touchUpInside" id="i1n-Y1-MjZ"/>
+                                            <action selector="dateSelected:" destination="oSc-3b-0yx" eventType="touchUpInside" id="IKK-tQ-fsq"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="a00-0O-hzq" firstAttribute="centerY" secondItem="hSD-pv-LXC" secondAttribute="centerY" id="EbB-Wj-emx"/>
-                                    <constraint firstItem="a00-0O-hzq" firstAttribute="centerX" secondItem="hSD-pv-LXC" secondAttribute="centerX" id="TNh-xH-lij"/>
+                                    <constraint firstItem="veT-V0-ybq" firstAttribute="centerY" secondItem="hSD-pv-LXC" secondAttribute="centerY" id="4Yl-vH-KSd"/>
+                                    <constraint firstItem="veT-V0-ybq" firstAttribute="centerX" secondItem="hSD-pv-LXC" secondAttribute="centerX" id="8pL-EM-ajR"/>
+                                    <constraint firstItem="E5h-cr-iBp" firstAttribute="centerY" secondItem="hSD-pv-LXC" secondAttribute="centerY" id="HFf-V5-stx"/>
+                                    <constraint firstItem="E5h-cr-iBp" firstAttribute="leading" secondItem="veT-V0-ybq" secondAttribute="trailing" constant="20" id="Yfa-18-9u7"/>
                                     <constraint firstAttribute="height" constant="60" id="yLG-hI-AN8"/>
                                 </constraints>
                             </view>
@@ -179,7 +182,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
-                        <outlet property="dateButton" destination="a00-0O-hzq" id="IRl-IU-Aps"/>
+                        <outlet property="datePicker" destination="veT-V0-ybq" id="AGP-kj-a18"/>
                         <outlet property="tableView" destination="EbN-2C-XsC" id="uIL-Dx-tln"/>
                     </connections>
                 </viewController>
@@ -189,9 +192,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

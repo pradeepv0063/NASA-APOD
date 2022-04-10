@@ -1,5 +1,4 @@
 PODS:
-  - FSCalendar (2.8.4)
   - Kingfisher (7.2.0)
   - MBProgressHUD (1.2.0)
   - PromiseKit (6.16.3):
@@ -14,7 +13,6 @@ PODS:
   - SwiftLint (0.46.3)
 
 DEPENDENCIES:
-  - FSCalendar
   - Kingfisher (~> 7.0)
   - MBProgressHUD (~> 1.2.0)
   - PromiseKit (~> 6.8)
@@ -22,19 +20,17 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - FSCalendar
     - Kingfisher
     - MBProgressHUD
     - PromiseKit
     - SwiftLint
 
 SPEC CHECKSUMS:
-  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   Kingfisher: 3ac0b75b155cabc0e544877d1a4deea29feece92
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   PromiseKit: ed0e2a8e3f3cd59d5d98ca0a6de481a2c5c59c0b
   SwiftLint: ae76d82f056734f853c8cd0371503252c606c482
 
-PODFILE CHECKSUM: e32abb50565ac82c89ffa88c0433e7e9142d6786
+PODFILE CHECKSUM: 2c255d45f4d1981b2bbc53b6299e174b2cdc39cc
 
 COCOAPODS: 1.11.2

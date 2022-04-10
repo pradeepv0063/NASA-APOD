@@ -9,7 +9,6 @@ target 'NASA APOD' do
   pod 'SwiftLint'
   pod 'PromiseKit', "~> 6.8"
   pod 'Kingfisher', '~> 7.0'
-  pod 'FSCalendar'
   pod 'MBProgressHUD', '~> 1.2.0'
 
 end

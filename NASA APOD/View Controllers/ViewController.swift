@@ -15,9 +15,9 @@ enum CellRows: Int {
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var dateButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var datePicker: UIDatePicker!
+
     lazy var viewModel = MainViewModel()
     var currentImage: UIImage?
 
@@ -26,9 +26,10 @@ class ViewController: UIViewController {
         setupBindings()
         viewModel.viewLoaded()
     }
-
-    @IBAction func dateSelected(_ sender: Any) {
-        viewModel.loadRandom()
+    
+    @IBAction func dateSelected(_ sender: UIButton) {
+        presentedViewController?.dismiss(animated: true, completion: nil)
+        viewModel.loadPicture(on: datePicker.date)
     }
 }
 

@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-181" y="119"/>
         </scene>
-        <!--View Controller-->
+        <!--Picture of the Day-->
         <scene sceneID="VWd-O2-aoa">
             <objects>
                 <viewController id="oSc-3b-0yx" customClass="ViewController" customModule="NASA_APOD" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,9 +42,9 @@
                                         </constraints>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5h-cr-iBp">
-                                        <rect key="frame" x="282" y="14.5" width="43" height="31"/>
+                                        <rect key="frame" x="282" y="6.5" width="57.5" height="47.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Go"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Go"/>
                                         <connections>
                                             <action selector="dateSelected:" destination="oSc-3b-0yx" eventType="touchUpInside" id="IKK-tQ-fsq"/>
                                         </connections>
@@ -175,8 +175,9 @@
                             <constraint firstItem="hSD-pv-LXC" firstAttribute="leading" secondItem="XHG-Le-DTe" secondAttribute="leading" id="gmT-sv-uui"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bQ1-9H-EXd">
-                        <barButtonItem key="rightBarButtonItem" title="View Favorites" id="cTc-RM-L7o">
+                    <navigationItem key="navigationItem" title="Picture of the Day" id="bQ1-9H-EXd">
+                        <barButtonItem key="rightBarButtonItem" image="FavList" id="cTc-RM-L7o">
+                            <color key="tintColor" systemColor="labelColor"/>
                             <connections>
                                 <action selector="favoritesTapped:" destination="oSc-3b-0yx" id="N3s-gc-ZiC"/>
                             </connections>
@@ -193,7 +194,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FavList" width="33.333332061767578" height="33.333332061767578"/>
         <image name="Favorite" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="Go" width="33.333332061767578" height="33.333332061767578"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

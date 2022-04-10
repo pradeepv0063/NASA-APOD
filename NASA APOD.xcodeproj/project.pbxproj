@@ -27,6 +27,7 @@
 		CCF641A42802D85F00E4373C /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641A32802D85F00E4373C /* MediaTableViewCell.swift */; };
 		CCF641A62802D86600E4373C /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641A52802D86600E4373C /* DetailTableViewCell.swift */; };
 		CCF641D32803567200E4373C /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641D22803567200E4373C /* LocalStorageService.swift */; };
+		CCF641D528035CB900E4373C /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF641D428035CB900E4373C /* NetworkConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		CCF641A32802D85F00E4373C /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		CCF641A52802D86600E4373C /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		CCF641D22803567200E4373C /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
+		CCF641D428035CB900E4373C /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				CCF6417A2802B24B00E4373C /* NetworkContants.swift */,
 				CCF6417B2802B24B00E4373C /* NetworkDispatcher.swift */,
 				CCF6417C2802B24B00E4373C /* NetworkModels.swift */,
+				CCF641D428035CB900E4373C /* NetworkConnection.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			files = (
 				CCF641A22802D85400E4373C /* TitleTableViewCell.swift in Sources */,
 				CCF6419B2802BA8100E4373C /* APODModel.swift in Sources */,
+				CCF641D528035CB900E4373C /* NetworkConnection.swift in Sources */,
 				CCF6417D2802B24B00E4373C /* NetworkContants.swift in Sources */,
 				CCF6418A2802B26E00E4373C /* Extensions.swift in Sources */,
 				CCF641A42802D85F00E4373C /* MediaTableViewCell.swift in Sources */,

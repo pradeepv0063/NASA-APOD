@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             diskCapacity: cacheSize * 1024 * 1024,
             diskPath: "dataCache"
         )
+        NetworkConnection.startMonitor()
         return true
     }
 

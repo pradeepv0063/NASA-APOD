@@ -468,7 +468,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7NQ2QT4C3B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "NASA APOD/Info.plist";
+				INFOPLIST_FILE = "NASA APOD/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -497,7 +497,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7NQ2QT4C3B;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "NASA APOD/Info.plist";
+				INFOPLIST_FILE = "NASA APOD/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

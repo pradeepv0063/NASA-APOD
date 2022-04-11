@@ -228,6 +228,7 @@
 				CCF6415D2802B06E00E4373C /* Frameworks */,
 				CCF6415E2802B06E00E4373C /* Resources */,
 				AB749DBB238C2919CC1077D7 /* [CP] Embed Pods Frameworks */,
+				CC5BE6A028040ABF005FD22A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -301,6 +302,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NASA APOD/Pods-NASA APOD-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CC5BE6A028040ABF005FD22A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		CED1CB75368134C656D81493 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

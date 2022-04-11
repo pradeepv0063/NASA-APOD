@@ -1,16 +1,11 @@
 disabled_rules:
-  - identifier_name
-  - line_length
-  - todo
-  - comment_spacing
-  - computed_accessors_order
-  - large_tuple
+    - line_length
+    - todo
+    - comment_spacing
+    - computed_accessors_order
+    - inclusive_language
+    - large_tuple
+    - switch_case_alignment
 
 excluded:
-  - Pods
-
-force_cast:
-    severity: warning
-
-empty_count:
-    severity: warning
+    - Pods

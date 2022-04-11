@@ -142,6 +142,11 @@ private extension ViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
             self?.present(alert, animated: true)
         }
+        
+        viewModel.updateDatePicker.bind { [weak self] date in
+            guard let date = date else { return }
+            self?.datePicker.date = date
+        }
     }
     
     @objc func favoriteTapped() {

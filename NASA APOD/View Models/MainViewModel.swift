@@ -16,6 +16,7 @@ class MainViewModel: MainViewModelType {
     var reload: Dynamic<Bool> = Dynamic(false)
     var showLoader: Dynamic<(Bool, String)> = Dynamic((false, ""))
     var showAlert: Dynamic<(String, String)> = Dynamic(("", ""))
+    var updateDatePicker: Dynamic<Date?> = Dynamic(nil)
 
     var title: String = ""
     var detail: String = ""
@@ -83,6 +84,7 @@ extension MainViewModel {
             showErrorAlert("Please try after sometime")
             return
         }
+        updateDatePicker.value = date.getDate()
         getPicture(for: date)
     }
 }

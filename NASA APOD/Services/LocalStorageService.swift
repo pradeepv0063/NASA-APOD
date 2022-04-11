@@ -13,13 +13,13 @@ protocol LocalStorageServiceType {
 }
 
 class LocalStorageService: LocalStorageServiceType {
-    
+
     /// Sets and Returns the Dictionary containing the list of favorites.
     ///
     /// The key contains the `Title` and value contains `Date` of the Favorite picture.
-    
+
     static var favorites: [String: String] {
-        
+
         get {
             let list = UserDefaults.standard.object(forKey: UserDefaultKeys.favorites.rawValue) as? [String: String]
             return list ?? [: ]

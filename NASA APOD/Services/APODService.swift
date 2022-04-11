@@ -9,7 +9,7 @@ import Foundation
 import PromiseKit
 
 protocol APODServiceType {
-        
+
     static func getPicture(date: String) -> Promise<APODModel>
 }
 

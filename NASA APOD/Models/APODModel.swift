@@ -24,13 +24,13 @@ struct APODModel: Codable {
     let title: String
     let url: URL?
     let urlString: String
-    
+
     enum CodingKeys: String, CodingKey {
         case title, date, url, hdurl
         case detail = "explanation"
         case mediaType = "media_type"
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 

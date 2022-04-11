@@ -8,11 +8,11 @@
 import Foundation
 
 protocol MainViewModelType {
-    
+
 }
 
 class MainViewModel: MainViewModelType {
-    
+
     var reload: Dynamic<Bool> = Dynamic(false)
     var showLoader: Dynamic<(Bool, String)> = Dynamic((false, ""))
     var showAlert: Dynamic<(String, String)> = Dynamic(("", ""))
@@ -24,7 +24,7 @@ class MainViewModel: MainViewModelType {
     var imageUrl: URL?
     var videoId: String?
     var mediaType: MediaType = .unknown
-    
+
     let service: APODServiceType.Type
     var storageService: LocalStorageServiceType.Type = LocalStorageService.self
 
@@ -38,7 +38,7 @@ class MainViewModel: MainViewModelType {
     func viewLoaded() {
         loadPicture(on: Date())
     }
-    
+
     /// Called to Load a picture information on a specific date
     ///
     /// - Parameter date: `Date` selected by the user
@@ -49,23 +49,23 @@ class MainViewModel: MainViewModelType {
 }
 
 extension MainViewModel {
-    
+
     /// Called to Toggle the Favorite option of a individual day. If it is favorite then this function unfavorites and viceversa.
     ///
     /// - Returns: `Bool` Indicates the current Picture is in favorite state or unfavorite state post toggle
     ///
     /// The Favorite will be stored and retrieved from a storage service.
     func toggleFavorite() -> Bool {
-        
+
         var favoritesList = storageService.favorites
         var isSelected: Bool
-        
+
         if favoritesList.isEmpty {
-            
+
             isSelected = true
             storageService.favorites = [title: date]
         } else {
-            
+
             if favoritesList[title] == nil {
                 isSelected = true
                 favoritesList[title] = date
@@ -78,7 +78,7 @@ extension MainViewModel {
 
         return isSelected
     }
-    
+
     /// Called to get the Favorite status of current Picture
     ///
     /// - Returns: `Bool` Indicates the favorite status of current Picture
@@ -86,7 +86,7 @@ extension MainViewModel {
         let status = storageService.favorites[title] != nil
         return status
     }
-    
+
     /// Called to get list of Favorites
     ///
     /// - Returns: An Array of string with list of Favorites
@@ -94,7 +94,7 @@ extension MainViewModel {
         let keys = storageService.favorites.map { $0.key }
         return keys
     }
-    
+
     /// Called to a favorite is selected
     ///
     /// - Parameter date: `String` containing the title of the picture
@@ -110,9 +110,9 @@ extension MainViewModel {
 }
 
 private extension MainViewModel {
-    
+
     func getPicture(for date: String) {
-        
+
         showLoader.value = (true, "Loading")
         service.getPicture(date: date).done { [weak self] model in
             self?.setView(with: model)
@@ -124,9 +124,9 @@ private extension MainViewModel {
             self.showLoader.value = (false, "")
         }
     }
-    
+
     func setView(with model: APODModel) {
-        
+
         title = model.title
         detail = model.detail
         mediaType = model.mediaType
@@ -141,7 +141,7 @@ private extension MainViewModel {
             default: break
         }
     }
-    
+
     func showErrorAlert(_ message: String) {
         showAlert.value = ("Error", message)
     }

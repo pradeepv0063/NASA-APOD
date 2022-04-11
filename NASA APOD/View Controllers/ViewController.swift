@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         setupBindings()
         viewModel.viewLoaded()
     }
-    
+
     /// Called when User selects a date in the `DatePicker`
     @IBAction func dateSelected(_ sender: UIButton) {
         presentedViewController?.dismiss(animated: true, completion: nil)
@@ -37,13 +37,13 @@ class ViewController: UIViewController {
     /// Called when User taps on the Favorite 
     @IBAction func favoritesTapped(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Your Favorites", message: "", preferredStyle: .actionSheet)
-        
+
         let favList = viewModel.getFavList()
-        
+
         if favList.isEmpty {
             alert.title = "No Favorites"
         } else {
-            
+
             alert.title = "Your Favorites"
             for item in favList {
                 alert.addAction(UIAlertAction(title: item, style: .default, handler: { _ in
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
                 }))
             }
         }
-        
+
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
         present(alert, animated: false)
     }
@@ -63,10 +63,11 @@ extension ViewController: UITableViewDataSource {
         3
     }
 
+    //swiftlint:disable:next cyclomatic_complexity
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         switch indexPath.row {
-                
+
             case CellRows.title.rawValue:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.titleCell.rawValue, for: indexPath) as? TitleTableViewCell else { return UITableViewCell() }
                 cell.imageTitle.text = viewModel.title
@@ -74,7 +75,7 @@ extension ViewController: UITableViewDataSource {
                 let isSelected = viewModel.getFavStatus()
                 cell.favorite.isSelected = isSelected
                 return cell
-                
+
             case CellRows.media.rawValue:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.mediaCell.rawValue, for: indexPath) as? MediaTableViewCell else { return UITableViewCell() }
                 if viewModel.mediaType == .image {
@@ -95,19 +96,19 @@ extension ViewController: UITableViewDataSource {
                     cell.videoView.load(withVideoId: viewModel.videoId!)
                 }
                 return cell
-                
+
             case CellRows.detail.rawValue:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.detailCell.rawValue, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
                 cell.detail.text = viewModel.detail
                 return cell
-                
+
             default: return UITableViewCell()
         }
     }
 }
 
 extension ViewController: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard indexPath.row == 1, let image = currentImage else { return UITableView.automaticDimension }
         let imageWidth = image.size.width
@@ -123,11 +124,11 @@ extension ViewController: UITableViewDelegate {
 private extension ViewController {
 
     func setupBindings() {
-        
+
         viewModel.reload.bind { [weak self] _ in
             self?.tableView.reloadData()
         }
-        
+
         viewModel.showLoader.bind { [weak self] (show, message) in
             guard let self = self else { return }
             if show {
@@ -138,21 +139,21 @@ private extension ViewController {
                 MBProgressHUD .hide(for: self.view, animated: true)
             }
         }
-        
+
         viewModel.showAlert.bind { [weak self] (title, message) in
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
             self?.present(alert, animated: true)
         }
-        
+
         viewModel.updateDatePicker.bind { [weak self] date in
             guard let date = date else { return }
             self?.datePicker.date = date
         }
     }
-    
+
     @objc func favoriteTapped() {
-        
+
         let isSelected = viewModel.toggleFavorite()
         let titleIndexPath = IndexPath(row: 0, section: 0)
         let cell = tableView.cellForRow(at: titleIndexPath) as? TitleTableViewCell

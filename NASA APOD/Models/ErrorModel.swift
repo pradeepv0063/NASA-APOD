@@ -10,7 +10,7 @@ import Foundation
 struct ErrorModel: Decodable {
     let code: Int
     let message: String
-    
+
     enum CodingKeys: String, CodingKey {
         case code
         case message = "msg"

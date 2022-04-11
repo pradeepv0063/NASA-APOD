@@ -77,7 +77,6 @@ private extension BaseNetworkDispatcher {
 
 extension PMKHTTPError {
 
-    
     public var createError: NSError {
         switch self {
             case .badStatusCode(let code, let data, _):

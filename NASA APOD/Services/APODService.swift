@@ -21,11 +21,10 @@ class APODService: APODServiceType {
 
     static var service: NetworkDispatcher.Type = BaseNetworkDispatcher.self
 
-    static func getTodaysPicture() -> Promise<APODModel> {
-        let request = BaseRequest()
-        return service.execute(request: request, for: APODModel.self).compactMap { $0 }
-    }
-    
+    /// Call to get the Picture information for the given Date
+    ///
+    /// - Parameter date: `String` containing the date in YYYY-MM-dd format
+    /// - Returns: `Promise<APODModel>` APODModel enclosed in the Promise, returned by the API call
     static func getPicture(date: String) -> Promise<APODModel> {
         let request = BaseRequest(path: Path.onDate.rawValue + date)
         return service.execute(request: request, for: APODModel.self).compactMap { $0 }

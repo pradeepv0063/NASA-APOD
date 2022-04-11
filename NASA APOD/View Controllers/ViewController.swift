@@ -28,11 +28,13 @@ class ViewController: UIViewController {
         viewModel.viewLoaded()
     }
     
+    /// Called when User selects a date in the `DatePicker`
     @IBAction func dateSelected(_ sender: UIButton) {
         presentedViewController?.dismiss(animated: true, completion: nil)
         viewModel.loadPicture(on: datePicker.date)
     }
 
+    /// Called when User taps on the Favorite 
     @IBAction func favoritesTapped(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Your Favorites", message: "", preferredStyle: .actionSheet)
         

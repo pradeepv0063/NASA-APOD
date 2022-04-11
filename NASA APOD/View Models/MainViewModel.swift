@@ -31,11 +31,17 @@ class MainViewModel: MainViewModelType {
     init(service: APODServiceType.Type = APODService.self) {
         self.service = service
     }
-    
+
+    /// Called when UIViewController's viewDidLoad is executed.  We load Today's picture here.
+    ///
+    /// - Parameter date: `Date` selected by the user
     func viewLoaded() {
         loadPicture(on: Date())
     }
     
+    /// Called to Load a picture information on a specific date
+    ///
+    /// - Parameter date: `Date` selected by the user
     func loadPicture(on date: Date) {
         let dateString =  date.getDateString()
         getPicture(for: dateString)
@@ -44,6 +50,11 @@ class MainViewModel: MainViewModelType {
 
 extension MainViewModel {
     
+    /// Called to Toggle the Favorite option of a individual day. If it is favorite then this function unfavorites and viceversa.
+    ///
+    /// - Returns: `Bool` Indicates the current Picture is in favorite state or unfavorite state post toggle
+    ///
+    /// The Favorite will be stored and retrieved from a storage service.
     func toggleFavorite() -> Bool {
         
         var favoritesList = storageService.favorites
@@ -68,16 +79,25 @@ extension MainViewModel {
         return isSelected
     }
     
+    /// Called to get the Favorite status of current Picture
+    ///
+    /// - Returns: `Bool` Indicates the favorite status of current Picture
     func getFavStatus() -> Bool {
         let status = storageService.favorites[title] != nil
         return status
     }
     
+    /// Called to get list of Favorites
+    ///
+    /// - Returns: An Array of string with list of Favorites
     func getFavList() -> [String] {
         let keys = storageService.favorites.map { $0.key }
         return keys
     }
     
+    /// Called to a favorite is selected
+    ///
+    /// - Parameter date: `String` containing the title of the picture
     func loadFav(title: String) {
         let favorites = storageService.favorites
         guard let date = favorites[title] else {
